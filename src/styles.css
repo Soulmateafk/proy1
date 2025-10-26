@@ -1,15 +1,28 @@
-*{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-
-}
-img{
-    max-width: 100%;
-    height: auto;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    font-family: Arial, sans-serif;
+img {
+  max-width: 100%;
+  height: auto;
+}
 
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
 }
