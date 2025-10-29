@@ -94,7 +94,11 @@
           }
         },
         "deploy": {
-          "builder": "@angular-devkit/build-angular:deploy"
+          "builder": "@angular-devkit/build-angular:deploy",
+          "options": {
+            "dir": "dist/motos",
+            "baseHref": "https://Soulmateafk.github.io/proy1.git"
+          }
           
           }
         }
