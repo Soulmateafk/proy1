@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular/devkit/build-angular:browser",
           "options": {
-            "outputPah": "dist/proy1",
+            "outputPath": "dist/motos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -104,11 +104,10 @@
         }
       }
 
-    },
-    "cli": {
-      "analytics": "bc05a541-4f7e-4531-b099-cc298f5cda47"
     }
 
+ }
 
-  }
+
+  
 
