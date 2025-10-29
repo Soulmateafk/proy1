@@ -11,9 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular/devkit/build-angular:browser",
           "options": {
-            "browser": "src/main.ts",
+            "outputPah": "dist/proy1",
+            "index": "src/index.html",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -21,7 +23,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
               }
             ],
             "styles": [
@@ -47,12 +50,14 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all", 
+              "baseHref": "https://Soulmateafk.github.io/proy1.git" 
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "baseHref":"/"
             }
           },
           "defaultConfiguration": "production"
@@ -88,13 +93,22 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular-devkit/build-angular:deploy"
+          
           }
         }
       }
+
+    },
+    "cli": {
+      "analytics": "bc05a541-4f7e-4531-b099-cc298f5cda47"
     }
-  },
-  "cli": {
-    "analytics": "d105211f-e4de-4e60-b555-31c30f102e8a"
+
+
   }
-}
+
