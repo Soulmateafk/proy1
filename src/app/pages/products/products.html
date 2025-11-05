@@ -21,27 +21,14 @@
     <span class="visually-hidden">Siguiente</span>
   </button>
 </div>
-<div class="container img">
-  <h2 class="text-center mb-4">Nuestros modelos</h2>
-  <div class="row g-3">
-    <div class="col-md-4 col-sm-6">
-      <img src="/galgo.webp" class="img-fluid rounded shadow-sm" alt="galgo">
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <img src="/250cc.webp" class="img-fluid rounded shadow-sm" alt="la 250cc">
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <img src="/yamaha.jpg" class="img-fluid rounded shadow-sm" alt="yamaha">
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <img src="/tracer.webp" class="img-fluid rounded shadow-sm" alt="tracer">
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <img src="/gfelit.webp" class="img-fluid rounded shadow-sm" alt="elit">
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <img src="/gsx.jpg" class="img-fluid rounded shadow-sm" alt="gsx">
-    </div>
-  </div>
-</div>
 
+<section class="productos">
+  @for (producto of productos; track producto.id) {
+    <article class="producto">
+      <img [src]="producto.imagen" [alt]="producto.nombre">
+      <h3>{{ producto.nombre }}</h3>
+      <p>{{ producto.descripcion }}</p>
+      <strong>{{producto.precio}}</strong>"
+    </article>
+  }
+</section>
