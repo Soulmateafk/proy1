@@ -1,11 +1,16 @@
-html, body {
-  height: 100%;
+body.contact-page {
+  background-image: url("/fondomoto.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
   margin: 0;
 }
 
-body {
-  background-image: url("/../fondomoto.jpg"); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.contenido {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 10px;
 }
