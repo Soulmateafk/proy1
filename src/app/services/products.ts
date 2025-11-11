@@ -19,7 +19,7 @@ export class Products {
       id: 1,
       nombre: 'tomahawk dodge',
       descripcion : 'Description of Product1',
-      precio: 550.0000000
+      precio: 5500000000
 ,
       imagen: '/touh.jpg',
     },
