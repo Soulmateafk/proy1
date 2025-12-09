@@ -1,16 +1,40 @@
-body.contact-page {
+body {
   background-image: url("/fondomoto.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   min-height: 100vh;
   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 300px;
 }
 
-.contenido {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
+form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  width: 100%;
   max-width: 500px;
-  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.form-floating .form-control,
+.form-floating .form-select {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px !important;
+}
+
+.form-floating > label {
+  color: #333;
+  font-weight: 500;
+}
+
+button.btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
   border-radius: 10px;
 }
