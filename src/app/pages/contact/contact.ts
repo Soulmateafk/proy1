@@ -31,7 +31,6 @@ export class Contact {
     });
   }
 
-
   get f(): ContactControls {
     return this.contactForm.controls as unknown as ContactControls;
   }
@@ -42,8 +41,23 @@ export class Contact {
       return;
     }
 
-    console.log('Formulario válido:', this.contactForm.value);
-    alert('Formulario enviado correctamente');
+    const datos = this.contactForm.value;
+
+    const contactosExistentes = localStorage.getItem('contactos');
+    const contactos = contactosExistentes ? JSON.parse(contactosExistentes) : [];
+    contactos.push(datos);
+    localStorage.setItem('contactos', JSON.stringify(contactos, null, 2));
+
+    const blob = new Blob([JSON.stringify(contactos, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'contactos.json';
+    a.click();
+    URL.revokeObjectURL(url);
+
+    alert('Formulario enviado y contacto creado automáticamente');
+
     this.contactForm.reset();
   }
 }

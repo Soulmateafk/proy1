@@ -1,28 +1,38 @@
-<div class="d-flex justify-content-center" 
-     style="padding-top: 40px; padding-bottom: 40px;">
-     
-  <form [formGroup]="contactForm" (ngSubmit)="enviar()"
-        class="p-4 shadow rounded"
-        style="width: 100%; max-width: 500px;">
+<div class="d-flex justify-content-center" style="padding-top: 40px; padding-bottom: 40px;">
+  <form [formGroup]="contactForm" (ngSubmit)="enviar()" class="p-4 shadow rounded" style="width: 100%; max-width: 500px;">
 
     <div class="form-floating mb-3">
       <input type="email" class="form-control" placeholder="name@example.com" formControlName="email">
       <label>Email</label>
+      <div *ngIf="f.email.touched && f.email.invalid" class="text-danger">
+        <small *ngIf="f.email.errors?.['required']">El email es obligatorio.</small>
+        <small *ngIf="f.email.errors?.['email']">Formato de email inválido.</small>
+      </div>
     </div>
 
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
       <label>Nombre</label>
+      <div *ngIf="f.nombre.touched && f.nombre.invalid" class="text-danger">
+        <small *ngIf="f.nombre.errors?.['required']">El nombre es obligatorio.</small>
+      </div>
     </div>
 
     <div class="form-floating mb-3">
       <input type="text" class="form-control" placeholder="Teléfono" formControlName="telefono">
       <label>Teléfono</label>
+      <div *ngIf="f.telefono.touched && f.telefono.invalid" class="text-danger">
+        <small *ngIf="f.telefono.errors?.['required']">El teléfono es obligatorio.</small>
+        <small *ngIf="f.telefono.errors?.['pattern']">El teléfono debe tener solo números (7-15 dígitos).</small>
+      </div>
     </div>
 
     <div class="form-floating mb-3">
       <textarea class="form-control" placeholder="Comentarios" style="height: 100px" formControlName="comentarios"></textarea>
       <label>Comentarios</label>
+      <div *ngIf="f.comentarios.touched && f.comentarios.invalid" class="text-danger">
+        <small *ngIf="f.comentarios.errors?.['required']">Los comentarios son obligatorios.</small>
+      </div>
     </div>
 
     <div class="form-floating mb-3">
@@ -33,9 +43,11 @@
         <option value="sugerencia">Sugerencia</option>
       </select>
       <label>Causa</label>
+      <div *ngIf="f.causa.touched && f.causa.invalid" class="text-danger">
+        <small *ngIf="f.causa.errors?.['required']">Selecciona una causa.</small>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-primary w-100">Enviar</button>
-
   </form>
 </div>
